@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+import datetime
 
 # Set the colormap
 plt.rcParams['image.cmap'] = 'BrBG'
@@ -15,6 +16,7 @@ def evolve(u, u_previous, a, dt, dx2, dy2):
 
     n, m = u.shape
 
+    start_time = datetime.datetime.now()
     for i in range(1, n-1):
         for j in range(1, m-1):
             u[i, j] = u_previous[i, j] + a * dt * ( \
@@ -24,6 +26,8 @@ def evolve(u, u_previous, a, dt, dx2, dy2):
                  u_previous[i, j-1]) / dy2 )
     u_previous[:] = u[:]
 
+    end_time = datetime.datetime.now()
+    print("duration:", end_time-start_time)
 def iterate(field, field0, a, dx, dy, timesteps, image_interval):
     """Run fixed number of time steps of heat equation"""
 
