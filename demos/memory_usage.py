@@ -24,16 +24,16 @@ overhead = maxmem()
 
 a = np.random.random((1024, 1024, 10))
 b = np.random.random((1024, 1024, 10))
-c = a - b
+#c = a - b
 #c = 2.0 * a - 4.5 * b
 #c = 2.0 * a - 4.5 * b + np.sin(a) - np.cos(b)
 #c = 2.0 * a - 4.5 * b + (np.sin(a) - np.cos(b))
 #c = (np.sin(a) - np.cos(b)) + 2.0 * a - 4.5 * b
 
-#c = 2.0 * a
-#c -= 4.5 * b
-#c += np.sin(a)
-#c -= np.cos(b)
+c = 2.0 * a
+c -= 4.5 * b
+c += np.sin(a)
+c -= np.cos(b)
 
 mem = maxmem() - overhead
 
