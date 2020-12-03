@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 # Set the colormap
 plt.rcParams['image.cmap'] = 'BrBG'
 
-def evolve(u, u_previous, a, dt, dx2, dy2):
+def evolve(float u, float u_previous, float a, float dt, float dx2, float dy2):
     """Explicit time evolution.
        u:            new temperature field
        u_previous:   previous field

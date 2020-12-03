@@ -2,7 +2,7 @@ from __future__ import print_function
 import time
 import argparse
 
-from heat import init_fields, write_field, iterate
+from heat_cyt import init_fields, write_field, iterate
 
 
 def main(input_file='bottle.dat', a=0.5, dx=0.1, dy=0.1, 

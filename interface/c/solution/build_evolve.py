@@ -13,9 +13,8 @@ ffibuilder.set_source("_evolve",  # name of the output C extension
                      double a, double dt, double dx2, double dy2);
 """,
     sources=['evolve.c'],   
-    extra_compile_args=['-O3'],
     library_dirs=['.'],
-    # libraries=['evolve'],
+    extra_compile_args=['-O3'],
 )
 
 if __name__ == "__main__":
