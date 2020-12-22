@@ -104,6 +104,8 @@ def main():
                 + 'of MPI tasks (' + str(size) + ').')
     n = int(shape[0] / size)  # number of rows for each MPI task
     m = shape[1]         # number of columns in the field
+    print(type(dtype))
+    print(dtype)
     buff = np.zeros((n, m), dtype)
     comm.Scatter(field, buff, 0)  # scatter the data
     local_field = np.zeros((n + 2, m), dtype)  # need two ghost rows!
